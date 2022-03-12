@@ -5,7 +5,7 @@
 #define TERMCLASS "St"
 
 /* appearance */
-static unsigned int borderpx  = 3;        /* border pixel of windows */
+static unsigned int borderpx  = 4;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static unsigned int gappih    = 20;       /* horiz inner gap between windows */
 static unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -15,7 +15,7 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "FiraCode Nerd Font Mono:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
+static char *fonts[]          = { "FiraCode Nerd Font Mono:size=10", "JoyPixels:pixelsize=14:antialias=true:autohint=true", "Noto Sans CJK SC:pixelsize=18:antialias=true:autohint=true" };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -55,8 +55,8 @@ static const Rule rules[] = {
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
 	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),     1,           1,         0,        -1 },
 	{ "VirtualBox Manager",     "VirtualBox Manager",       NULL,       	    1 << 3,       0,           0,         0,        -1 },
-	{ "Google-chrome",     "google-chrome",       NULL,       	    1 << 8,       0,           0,         0,        -1 },
-	{ "Code",     "code",       NULL,       	    1 << 1,       0,           0,         0,        -1 }
+	{ "netease-cloud-music",     "netease-cloud-music",       NULL,       	    1 << 4,       0,           0,         0,        -1 },
+	{ "obs",     "obs",       NULL,       	    1 << 4,       0,           0,         0,        -1 }
 };
 
 /* layout(s) */
@@ -191,7 +191,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
 	/* { MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") }, */
-	{ MODKEY,			XK_d,		spawn,          SHCMD("dmenu_run") },
+	/* { MODKEY,			XK_d,		spawn,          SHCMD("dmenu_run") }, */
+    { MODKEY,			XK_d,		spawn,          SHCMD("rofi -modi 'run,drun' -show run") },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("passmenu") },
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
