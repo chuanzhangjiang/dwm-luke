@@ -1,0 +1,2 @@
+* 简介
+ 此dwm以luke的[[https://github.com/LukeSmithxyz/dwm][dwm]]为原型加入了一些自己喜欢的补丁定制而成,[[https://github.com/chuanzhangjiang/dwm-luke/tree/master/patch-list][补丁列表]].
